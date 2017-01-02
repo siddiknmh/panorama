@@ -42,6 +42,8 @@
 				width: 50px;
 				height: 50px;
 				border-radius:25px;
+				cursor: pointer;
+				border: 1px solid #333;
 			}
 			
 			.simg_holder{
@@ -76,7 +78,7 @@
 			<div id="container"></div>
 			<ul class="simg_holder">
 				<li class="small_img">
-					<img id="img_1" src="images/001.jpg" alt="">
+					<img id="img_1" src="images/snow.jpg" alt="">
 				</li>
 				<li class="small_img">
 					<img src="images/001.jpg" alt="">
@@ -90,9 +92,22 @@
 
 
 		<script>
+			var target = document.getElementById('img_1');
+			var attb = target.getAttribute("src");
+
+			console.log(attb);
+
+			target.addEventListener("click", getSmallImageNmae);
+
+			function getSmallImageNmae(){
+				alert("Check");
+			}
+
+
+			var mainImage = "images/sun.jpg";
 			var div = document.getElementById('container');
 			var PSV = new PhotoSphereViewer({
-					panorama: 'http://tassedecafe.org/wp-content/uploads/2013/01/parc-saint-pierre-amiens.jpg',
+					panorama: mainImage,
 					container: div,
 					time_anim: 3000,
 					navbar: false,
@@ -102,10 +117,7 @@
 					},*/
 				});
 
-			var target = document.getElementById('img_1');
-			var attb = target.getAttribute("src");
-
-			console.log(attb);
+			
 		</script>
 	</body>
 
