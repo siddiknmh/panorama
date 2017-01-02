@@ -34,18 +34,51 @@
 
 		<script>
 			var target = document.getElementById('img_1');
-			var attb = target.getAttribute("src");
 
-			console.log(attb);
+			var attb = target.getAttribute("src");
+			var getMainImage = "images/sun.jpg";
+
+			console.log(getMainImage);
 
 			target.addEventListener("click", getSmallImageNmae);
 
 			function getSmallImageNmae(){
-				alert("Check");
+				
+				var res = getMainImage.replace("images/sun.jpg", attb);
+
+				//alert(res);
+
+				//return res;
+
+				var newImag = '';
+
+				var r = confirm("Press a button!");
+				if (r == true) {
+				    newImag = res;
+				} else {
+				    newImag = getMainImage;
+				}
+
+				console.log(newImag);
+
+				return newImag;
+
+
 			}
 
+			if ( getSmallImageNmae() != getMainImage ) {
+				var mainImage = getSmallImageNmae();
+			}else{
+				var mainImage = getMainImage;
+			}
 
-			var mainImage = "images/sun.jpg";
+				console.log(mainImage);
+
+
+			//console.log(getSmallImageNmae());
+
+			//var mainImage = getSmallImageNmae();
+			
 			var div = document.getElementById('container');
 			var PSV = new PhotoSphereViewer({
 					panorama: mainImage,
