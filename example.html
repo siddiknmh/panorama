@@ -19,13 +19,13 @@
 			<div id="container"></div>
 			<ul class="simg_holder">
 				<li class="small_img">
-					<img id="img_1" src="images/snow.jpg" alt="">
+					<img class="wrk_img" src="images/snow.jpg" alt="">
 				</li>
 				<li class="small_img">
-					<img src="images/001.jpg" alt="">
+					<img class="wrk_img" src="images/001.jpg" alt="">
 				</li>
 				<li class="small_img">
-					<img src="images/001.jpg" alt="">
+					<img class="wrk_img" src="images/001.jpg" alt="">
 				</li>
 			</ul>
 		</div>
@@ -33,24 +33,36 @@
 
 
 		<script>
-			var target = document.getElementById('img_1');
+			//var target = document.query('.small_img img');
+			var target = document.getElementsByClassName('.small_img');
 
-			var attb = target.getAttribute("src");
+			//console.log(target);
+			
 			var getMainImage = "images/sun.jpg";
 
-			console.log(getMainImage);
+			for (var i = 0; i< target.length; i++){
+				
+			    target[i].addEventListener("click", getSmallImageNmae);
+			    var innerImage = target[i].querySelector('.wrk_img');
+				var attb = innerImage.getAttribute("src");
 
-			target.addEventListener("click", getSmallImageNmae);
+				console.log(attb);
+
+			}
+
+			
+
+			//target.addEventListener("click", getSmallImageNmae);
 
 			function getSmallImageNmae(){
 				
-				var res = getMainImage.replace("images/sun.jpg", attb);
+				//var res = getMainImage.replace("images/sun.jpg", attb);
 
-				//alert(res);
+				alert(attb);
 
 				//return res;
 
-				var newImag = '';
+				/*var newImag = '';
 
 				var r = confirm("Press a button!");
 				if (r == true) {
@@ -61,18 +73,18 @@
 
 				console.log(newImag);
 
-				return newImag;
+				return newImag;*/
 
 
 			}
 
-			if ( getSmallImageNmae() != getMainImage ) {
+			/*if ( getSmallImageNmae() != getMainImage ) {
 				var mainImage = getSmallImageNmae();
 			}else{
 				var mainImage = getMainImage;
 			}
 
-				console.log(mainImage);
+				console.log(mainImage);*/
 
 
 			//console.log(getSmallImageNmae());
