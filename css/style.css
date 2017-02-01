@@ -4,20 +4,17 @@ html, body {
 	height: 100%;
 	overflow: hidden;
 }
-#main{
-	width: 320px;
-	background: #fff;
-	margin: 0 auto;
-	position:relative;
-	min-height: 320px;
+.item_inner img{
+	height: 200px;
+	width: 200px;
+	border-radius: 100px;
+	cursor: pointer;
 }
 #container {
 	width: 200px;
 	height: 200px;
 	margin: 0 auto;
 	position: absolute;
-	left: 60px;
-	top: 60px;
 
 }
 #container canvas{

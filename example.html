@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/three.min.js"></script>
-		<script src="js/photo-sphere-viewer.min.js"></script>
+		<script src="js/photp-sphere-viewer.js"></script>
 		<style>
 			
 
@@ -21,7 +21,25 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<div id="container"></div>
+					<div class="item_inner">
+						<!-- <img src="images/snow.jpg" alt=""> -->
+						<div id="container"></div>
+					</div>
+					
+				</div>
+				<div class="col-md-4">
+					<div class="item_inner">
+						<img class="inner_img" src="images/sun.jpg" alt="">
+						<div></div>
+					</div>
+					
+				</div>
+				<div class="col-md-4">
+					<div class="item_inner">
+						<img  class="inner_img" src="images/sun.jpg" alt="">
+						<div></div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -29,17 +47,41 @@
 
 
 		<script>
-			
+
+			var holderImg = document.getElementsByClassName("inner_img")[0];
 			var div = document.getElementById('container');
+
+			var nextDiv = holderImg.nextElementSibling;
+
+				
+
+			//var imgLocation = holderImg.getAttribute("src");
+
+			
+
+			holderImg.addEventListener("mouseover", imgHoverHandel, false);
+
+			function imgHoverHandel(){
+				var removeID = div.removeAttribute("id");
+
+				if (removeID) {
+					var setA = nextDiv.setAttribute("id", "container");
+				}
+
+				
+			}
+
+			
 			var PSV = new PhotoSphereViewer({
 					panorama: "images/snow.jpg",
 					container: div,
-					time_anim: 3000,
-					navbar: false,
-					allow_user_interactions: false,
-					/*navbar_style: {
+					time_anim: 0,
+					navbar: true,
+					allow_user_interactions: true,
+					allow_scroll_to_zoom: true,
+					navbar_style: {
 						backgroundColor: 'rgba(58, 67, 77, 0.7)'
-					},*/
+					},
 				});
 
 			
