@@ -1852,5 +1852,3 @@ var PhotoSphereViewer = function(args) {
 	if (autoload)
 		this.load();
 };
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
